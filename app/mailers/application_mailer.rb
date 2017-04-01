@@ -5,7 +5,7 @@ class ApplicationMailer < ActionMailer::Base
   layout 'mailer'
 
   def guide(email, pdf_url)
-    attachments['Liam Howell Guide'] = open(pdf_url).read
-    mail(to: email, subject: 'Liam Howell Guide')
+    attachments['Liam Howells Guide.pdf'] = open(pdf_url).read
+    mail(to: email, subject: 'Liam Howells Guide')
   end
 end
