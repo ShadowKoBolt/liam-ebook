@@ -1,0 +1,75 @@
+@font-face {
+  font-family: GothamRounded-Bold;
+  src: asset-url("GothamRounded-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: GothamRounded-Book;
+  src: asset-url("GothamRounded-Book.otf") format("opentype");
+}
+
+$color-mint: #74EDD5;
+$color-purple: #A4A3ED;
+
+$font-family-sans-serif: 'GothamRounded-Book', sans-serif;
+$headings-font-family: 'GothamRounded-Bold', sans-serif;
+$font-size-base: 18px;
+$alert-info-bg: $color-purple;
+$alert-info-border: $color-purple;
+$alert-info-text: white;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  color: white;
+}
+
+h1, h2 {
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.background {
+  padding-top: 20px;
+  background-image: url(image-path('bg.png')), linear-gradient(to bottom right, $color-mint, $color-purple);
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+
+.row--pad {
+  padding-bottom: 80px;
+}
+
+.book {
+  font-family: $font-family-sans-serif;
+}
+
+.transparent {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+}
+
+.form-inline {
+  .form-group {
+    margin-right: 20px;
+  }
+  input[type='submit'] {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: $color-mint;
+    border-color: transparent;
+    transition: background-color 1s;
+    transition-timing-function: ease-in-out;
+    &:hover {
+      background-color: darken($color-mint, 30%);
+    }
+  }
+}
+
+.bg-bottom {
+  margin-top: 60px;
+  background-image: url(image-path('bg-bottom.svg'));
+  width: 100%;
+  height: 60px;
+}

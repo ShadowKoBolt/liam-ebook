@@ -1,0 +1,30 @@
+.background
+  header
+    .container
+      .row.row--pad
+        .col-xs-12
+          = image_tag 'logo.png', alt: 'Liam Howells Online Coaching'
+  .container
+    - if flash[:notice]
+      .alert.alert-info.text-center
+        = flash[:notice]
+    - if flash[:error]
+      .alert.alert-danger.text-center
+        = flash[:error]
+    .row.row--pad
+      .col-xs-12.text-center
+        h1 The wrong approach to your fat loss could leave you making zero progress for your efforts
+        h2.book Download our free guide to learn the top tips when starting your fat loss journey
+    .row.row--pad
+      .col-md-offset-3.col-md-6
+        .transparent.text-center
+          p The health & fitness industry is notorious for scams, fallacies and pseudo science.
+          p This guide cuts right through this and focuses only on the top 5 reasons that you aren't losing fat and how to simply resolve these.
+    .row.row--pad
+      .col-xs-12.text-center
+        = form_for(@signup, url: download_path, method: :post, html: { class: 'form-inline' }) do |f|
+          .form-group
+            = f.email_field :email, placeholder: 'Your email address', class: 'form-control input-lg', required: true
+          = f.submit 'Get the free guide', class: 'btn btn-default btn-lg'
+  .bg-bottom
+
