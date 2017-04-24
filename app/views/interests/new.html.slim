@@ -1,0 +1,42 @@
+.background.background-weights
+  header
+    .container
+      .row.row--pad
+        .col-xs-12
+          = image_tag 'logo.png', alt: 'Liam Howells Online Coaching'
+  .container
+    - if flash[:notice]
+      .alert.alert-info.text-center
+        = flash[:notice]
+    - if flash[:error]
+      .alert.alert-danger.text-center
+        = flash[:error]
+    .row.row--pad
+      .col-xs-12.text-center
+        h1 By registering your interest, not only do you get the option to sign up before general public, but you also get a big discount.
+    .row.row--pad
+      .col-md-offset-3.col-md-6
+        .transparent.text-center
+          p By joining this list, you aren’t committing to a sign up, but your place will be reserved and your discount will be secured for sign up on the day of launch.
+          p Speak soon.
+    .row.row--pad
+      .col-xs-12.text-center
+        - if @signup.new_record?
+          = form_for(@signup, url: root_path, method: :post, html: { class: 'form-inline' }) do |f|
+            - if @signup.errors.any?
+              .alert.alert-danger
+                ul.list-unstyled
+                  - @signup.errors.full_messages.each do |error|
+                    li = error
+            .form-group
+              = f.text_field :name, placeholder: 'Your name', class: 'form-control input-lg', required: true
+            .form-group
+              = f.email_field :email, placeholder: 'Your email address', class: 'form-control input-lg', required: true
+            = f.submit 'Register your interest', class: 'btn btn-default btn-lg'
+        - else
+          p.alert.alert-info
+            | Thank you for registering your interest for Online Coaching
+
+
+  .bg-bottom
+

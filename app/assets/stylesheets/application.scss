@@ -36,6 +36,10 @@ h1, h2 {
   background-size: cover;
 }
 
+.background-weights {
+  background-image: url(image-path('weights.png')), linear-gradient(to bottom right, $color-mint, $color-purple);
+}
+
 .row--pad {
   padding-bottom: 80px;
 }
